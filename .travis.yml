@@ -1,0 +1,41 @@
+sudo: false
+
+language: ruby
+
+dist:
+  - trusty
+
+cache: bundler
+
+rvm:
+  - 2.6.3
+
+services:
+  - postgresql
+
+addons:
+  apt:
+    packages:
+      - postgresql-11
+      - postgresql-client-11
+  postgresql: 11
+env:
+  global:
+    - PGPORT=5433
+
+notifications:
+  - false
+
+before_script:  
+  - cp config/database.yml.travis config/database.yml 
+  - RAILS_ENV=test bundle exec rake db:create    
+  - curl -L https://codeclimate.com/downloads/test-reporter/test-reporter-latest-linux-amd64 > ./cc-test-reporter
+  - chmod +x ./cc-test-reporter
+  - ./cc-test-reporter before-build
+
+script:
+  - bin/rake db:migrate RAILS_ENV=test
+  - bin/rake
+
+after_script:
+  - ./cc-test-reporter after-build --exit-code $TRAVIS_TEST_RESULT
