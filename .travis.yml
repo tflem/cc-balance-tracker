@@ -15,13 +15,6 @@ services:
 
 addons:
   postgresql: "11.5"
-  apt:
-    packages:
-      - postgresql-11
-      - postgresql-client-11
-env:
-  global:
-    - PGPORT=5432
 
 notifications:
   - false
