@@ -25,7 +25,6 @@ before_script:
 - cp config/database.yml.travis config/database.yml
 - bundle exec rake db:create
 - bundle exec rake db:migrate
-- bundle exec rake assets:precompile
 - RAILS_ENV=test bundle exec rake db:create
 - curl -L https://codeclimate.com/downloads/test-reporter/test-reporter-latest-linux-amd64
   > ./cc-test-reporter
