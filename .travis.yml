@@ -1,43 +1,48 @@
 sudo: false
-
 language: ruby
-
 dist:
-  - xenial
-
-cache: bundler
-
+- xenial
+cache:
+- bundler
 rvm:
-  - 2.6.3
-
+- 2.6.3
 services:
-  - postgresql
-
+- postgresql
 addons:
-  postgresql: "11.5"
-
+  postgresql: '11.5'
 notifications:
-  - false
-
+- false
 before_install:
-  - sudo apt-get update
-  - sudo apt-get --yes remove postgresql\*
-  - sudo apt-get install -y postgresql-11 postgresql-client-11
-  - sudo cp /etc/postgresql/{9.6,11}/main/pg_hba.conf
-  - sudo service postgresql restart 11  
-
+- sudo apt-get update
+- sudo apt-get --yes remove postgresql\*
+- sudo apt-get install -y postgresql-11 postgresql-client-11
+- sudo cp /etc/postgresql/{9.6,11}/main/pg_hba.conf
+- sudo service postgresql restart 11
 before_script:
-  - psql --version
-  - psql -c 'CREATE DATABASE cc_balance_tracker_test;' -U postgres
-  - psql -c 'CREATE ROLE travis SUPERUSER LOGIN CREATEDB;' -U postgres
-  - cp config/database.yml.travis config/database.yml
-  - RAILS_ENV=test bundle exec rake db:create    
-  - curl -L https://codeclimate.com/downloads/test-reporter/test-reporter-latest-linux-amd64 > ./cc-test-reporter
-  - chmod +x ./cc-test-reporter
-  - ./cc-test-reporter before-build
-
+- psql --version
+- psql -c 'CREATE DATABASE cc_balance_tracker_test;' -U postgres
+- psql -c 'CREATE ROLE travis SUPERUSER LOGIN CREATEDB;' -U postgres
+- cp config/database.yml.travis config/database.yml
+- bundle exec rake db:create
+- bundle exec rake db:migrate
+- bundle exec rake assets:precompile
+- RAILS_ENV=test bundle exec rake db:create
+- curl -L https://codeclimate.com/downloads/test-reporter/test-reporter-latest-linux-amd64
+  > ./cc-test-reporter
+- chmod +x ./cc-test-reporter
+- "./cc-test-reporter before-build"
 script:
-  - bundle exec rake spec  
-
+- bundle exec rake spec
 after_script:
-  - ./cc-test-reporter after-build --exit-code $TRAVIS_TEST_RESULT
+- "./cc-test-reporter after-build --exit-code $TRAVIS_TEST_RESULT"
+deploy:
+  provider: heroku
+  api_key:
+    secure: SECRET_KEY
+  app: cc-balance-tracker
+  on:
+    repo: tflem/cc-balance-tracker
+env:
+  global:
+  - secure: pOz1eI27RQ36tQYTfJeMUYI7FSOmuvmMJkwDy1sw5fvFwXzLjkwodS8NtHZgoXEkrM4jP+GwQttnspUXqfioosBLRyYBQr6YIYBAJM4snscuuhqDS/sSnXpRw6EpS7mfKd5EEoz4FETOI3hV3vT2m90lBzHmp7Wpxi7NezryxD8gesDjKzVjnIHdPvew5rzSJZlLuO5ToBPURPblDQqT7JDIPZ+v4g3oy/81aVuqoADXTVl8LwbqM/r8efbGuCD6H2HuvNiY9VaTZJOOy0NkNXM5tsftQI9ffpfvK7VyZoRFpErST5BecEdmxPhQD/YHSnd+4BtoG/ooMpVC9xGcywMWdAsH53s+TvP4hEXFg6OuBXuNopmjmQEvE4mtueH7dZEmhUyNCaThRBGZQ/atJhyqI5xsSYilwBnZGNyjL3RicapsTSAZsVmDKduTFjfJzaYe6QpLlOzfRxqdXQ9M4Q0uDk9Qv64xb1nnrXGFbnK0Md7DTSmeVCMhP5AVXkO2uz2aEr8WNSgVVTr5UXIGu6LQm2X9qGdhfSuaWlrsSxRqozygHFxdZNjh9fpqaz6p0J6qScp9OKy1OCPw1caV56HdLh7q5PwRhJ4RSgCmWV69OB5KvaL0J3peozS1buXZUaypO7MDebGlcNkZot4HCe/AXWgcEwpNkci5QkaMBLw=
+  - secure: GQHMIoSpi2zpgfiEXvDTlwm65rLgPaokiVEUk4fnuUpVcFpoS1q0u8PFEJ4r1rbqqJ5uKv7rV2zojSL7tUCLsmDTpGlo4txu1rkhvx1Fsuf7TIAbBk1iRi/exJy/4qV1x8atbBcYelzbQrgo0kRVPrRiDUNrsSR7bgR9Cp2otLk3tqE6r1WSds7H5Vmjg5lwFAQyw2JzsdG8MrGA8uWOCH1oM9Pbbn4do4JUYOo8NcEadSO4pNV9QtOfFN1he/i1Z2pcVHi1uSD8UlHlq08sqsElCqqWWP7Ch9pXKFF6odCFxspjIyzZqAQ3pu70bPS98klsoRzgHGXgLPCR/kKEZ5h4Iqy63WZ9EVb7Gdi4uVEEFhEFqxbg4cPKSEfH3g+5mYeQvyLVjt+O80uiBGJMY+YPVKUVWzOVnRHyKOfKWyoopxkbPJZ8u4CEo0a5/Pb8SF/gEnnJK+XF0jJmdP36ZX3MTE5NKeeeds+BS9ryLknTualLeITZB/FnohYw9HzhovSRvslycYWDF5QPa7Sixf6v5XLBZukYNznDiEuZALmyKd8h+8xcwxuFtSDyoeZhnJdu4FaXCcESHr1+cbbN9QKfjsGJIflQqx1vDrO5MOfVn28RahvSfdIoCh9oftaHMw3TbnsiAR2Dge9dCxI/OLaVDPwHfhpXO50YzkvZVdw=
