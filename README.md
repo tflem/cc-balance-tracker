@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.com/tflem/cc-balance-tracker.svg?branch=master)](https://travis-ci.org/tflem/cc-balance-tracker)
+
 # Credit Card Balance Tracker
 
 > This a credit card tracking application, which features the following tools:
