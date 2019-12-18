@@ -1,24 +1,41 @@
-# README
+# Credit Card Balance Tracker
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+> This a credit card tracking application, which features the following tools:
 
-Things you may want to cover:
+* Ruby 2.6.3
+* Continuous Integration/Deployment: Travis CI
+* Ruby on Rails 6.0.2
+* HTML5 and Sass
+* PostgreSQL 11
+* Testing Framework: RSpec 3.9
+* CSS Framework: Bootstrap
 
-* Ruby version
+## Setup
 
-* System dependencies
+How to run tests:
 
-* Configuration
+```
+% rspec spec
+```
 
-* Database creation
+How to run the development console:
 
-* Database initialization
+```
+% rails console
+```
 
-* How to run the test suite
+How to run the development server:
 
-* Services (job queues, cache servers, search engines, etc.)
+```
+% rails server
+```
 
-* Deployment instructions
+How to prepare (create and migrate) DB for `development` and `test` environments:
 
-* ...
+```
+% rails db:create
+
+% rails db:migrate
+```
+
+You can view a staged demo at http://cc-balance-tracker.herokuapp.com.
