@@ -12,5 +12,12 @@ RSpec.feature "Users can create new balances" do
     click_button "Create Balance"
 
     expect(page).to have_content "Credit balance information saved."
+
+    balance = Balance.find_by(cc_name: "Capital One")
+    expect(page.current_url).to eq balance_url(balance)
+
+
+    title = "Capital One - Balances - CC Balance Tracker"
+    expect(page).to have_title title
   end
 end

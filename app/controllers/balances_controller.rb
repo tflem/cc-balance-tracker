@@ -7,7 +7,7 @@ class BalancesController < ApplicationController
   end
 
   def create
-    @balance = Balance.new(@balance_params)
+    @balance = Balance.new(balance_params)
 
     if @balance.save
       flash[:notice] = "Credit balance information saved."
