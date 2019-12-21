@@ -1,0 +1,19 @@
+<h1>New Balance</h1>
+<%= form_for(@balance) do |f| %>
+  <p>
+    <%= f.label :cc_name, "Credit Card Name" %><br>
+    <%= f.text_field :cc_name %>
+  </p>
+
+  <p>
+    <%= f.label :cc_balance, "Credit Card Balance" %><br>
+    <%= f.text_field :cc_balance %>
+  </p>
+
+  <p>
+    <%= f.label :cc_due_date, "Due Date" %><br>
+    <%= f.text_field :cc_due_date %>
+  </p>
+
+  <%= f.submit %>
+<% end %>
