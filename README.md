@@ -1,4 +1,6 @@
 [![Build Status](https://travis-ci.com/tflem/cc-balance-tracker.svg?branch=master)](https://travis-ci.org/tflem/cc-balance-tracker)
+[![Maintainability](https://api.codeclimate.com/v1/badges/67886e108705eb7e42a3/maintainability)](https://codeclimate.com/github/tflem/cc-balance-tracker/maintainability)
+[![Test Coverage](https://api.codeclimate.com/v1/badges/67886e108705eb7e42a3/test_coverage)](https://codeclimate.com/github/tflem/cc-balance-tracker/test_coverage)
 
 # Credit Card Balance Tracker
 

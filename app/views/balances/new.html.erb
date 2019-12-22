@@ -1,0 +1,30 @@
+<h1>New Balance</h1>
+<%= form_for(@balance) do |f| %>
+  <% if @balance.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@balance.errors.count, "error") %>
+      prohibited this balance from being saved:</h2>    
+      <ul>
+        <% @balance.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+  <p>
+    <%= f.label :cc_name, "Credit Card Name" %><br>
+    <%= f.text_field :cc_name %>
+  </p>
+
+  <p>
+    <%= f.label :cc_balance, "Credit Card Balance" %><br>
+    <%= f.text_field :cc_balance %>
+  </p>
+
+  <p>
+    <%= f.label :cc_due_date, "Due Date" %><br>
+    <%= f.text_field :cc_due_date %>
+  </p>
+
+  <%= f.submit %>
+<% end %>
