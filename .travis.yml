@@ -14,6 +14,9 @@ services:
 - postgresql
 addons:
   postgresql: '11.5'
+  code_climate:
+    repo_token:
+      secure: OyZbMI+h74I0pd/6CzMbs6Nqb9ch681XxGLM7/vW9UmUVzjRuKRlJcc0m8zK5OObvivbm7dAXBMYbCI1sC9aKjgFa7Jl18k1sBFH/2BC2cdZppvjT+Yhr2A846SJpNfM8i99BcSnMy/R0keS5KpqE3Lq0yR6BFOSr7YN9gpcJF624t1Qt7JP8IEG5G641LOny/hOtPPy11cDTUT1z9ZNZMLxmsS9LmetOrHXuZrGpWdHTwKthR+f4bgOROUI7Do1kD1raIcCyw8UR81pW8L5o3ymShiNdBj6wTLot1s2nIdnDAdBTUJ8vJIeeli+xQgkL1OPwumVjDdPazvJA3+k2UdIdj5Gl7K+7NWz3bwkIGiuLY1AocwGSIQLFzW/35WuW0Km8rML/FBpo8xc44em5+uQ4lWX6u6erANUyj38pgk+7s3pYvzAIIul0S/EmSr9hZKkzP3Q0L+hkPCHiiEz2G0Arm3eSlK6GyVoLAS3/6Hrur00vlW+cDNTFOnRWoj8a7M6f3hOTqNLLqfO+IuJ3eVQAYHskaI6Mx6dhJGNl5nykrs2rvyGAMy0J/NNCpnQkVhO8dRx5LL7P+M1X2XLyC7raOluBL3tDHRurIbLw+sl6cDwtKpB1rXHPWw3qjfwQI9Ly8fgs51BX5gbJGNyCPx23DNke/28qLr1hRShp0I=
 notifications:
 - false
 before_install:
@@ -53,7 +56,7 @@ deploy:
   app: cc-balance-tracker
   on:
     repo: tflem/cc-balance-tracker
-    branch: creating-balances
+    branch: master
   run:
     - "rake db:migrate"
 env:
