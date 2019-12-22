@@ -13,7 +13,8 @@ class BalancesController < ApplicationController
       flash[:notice] = "Credit balance information saved."
       redirect_to @balance
     else
-      # nothing honey
+      flash.now[:alert] = "Credit balance information not saved."
+      render "new"
     end
   end
 
@@ -23,7 +24,7 @@ class BalancesController < ApplicationController
 
   private
 
-  def balance_params
-    params.require(:balance).permit(:cc_name, :cc_balance, :cc_due_date)
-  end
+    def balance_params
+      params.require(:balance).permit(:cc_name, :cc_balance, :cc_due_date)
+    end
 end
