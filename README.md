@@ -6,7 +6,7 @@
 
 > This a credit card tracking application, which features the following tools:
 
-* Ruby 2.6.3
+* Ruby 2.6.5
 * Continuous Integration/Deployment: Travis CI
 * Ruby on Rails 6.0.2
 * HTML5 and Sass
