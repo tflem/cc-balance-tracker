@@ -9,7 +9,7 @@ cache:
     - node_modules
   yarn: true
 rvm:
-  - 2.6.3
+  - 2.6.5
 services:
   - postgresql
 addons:
