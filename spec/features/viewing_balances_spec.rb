@@ -2,7 +2,7 @@ require "rails_helper"
 
 RSpec.feature "Users can view balances" do 
   scenario "with balance details" do
-    balance = FactoryBot.create(:balance, name: "Capitol One")
+    balance = FactoryBot.create(:balance, cc_name: "Capitol One")
 
     visit "/"
     click_link "Capitol One"
