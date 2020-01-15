@@ -35,6 +35,7 @@ group :test do
   gem 'capybara', '~> 3.29'
   gem 'simplecov', require: false
   gem 'simplecov-console', require: false
+  gem 'factory_bot', '~> 5.1', '>= 5.1.1'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
