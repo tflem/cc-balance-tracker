@@ -1,0 +1,11 @@
+<h1>Welcome to the Credit Card Balance Tracker</h1>
+<%= link_to "Add New Balance Information", new_balance_path %>
+
+<h2>Card Balances</h2>
+
+<div id="balances">
+  <% @balances.each do |balance| %>
+    <h3><%= link_to balance.cc_name, balance %></h3>
+    <p><%= balance.cc_balance %></p>
+  <% end %>
+</div>
