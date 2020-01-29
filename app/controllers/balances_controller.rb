@@ -23,6 +23,10 @@ class BalancesController < ApplicationController
     @balance = Balance.find(params[:id])
   end
 
+  def edit
+    @balance = Balance.find(params[:id])
+  end
+
   private
 
     def balance_params
