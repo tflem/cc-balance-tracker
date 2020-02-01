@@ -53,6 +53,6 @@ deploy:
   app: cc-balance-tracker
   on:
     repo: tflem/cc-balance-tracker
-    branch: deleting-balances
+    branch: handling-notfound-errors
   run:
     - rake db:migrate
