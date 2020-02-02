@@ -13,10 +13,64 @@
  *= require_tree .
  *= require_self
  */
- @import "font-awesome-sprockets";
- @import "font-awesome";
- @import "bulma";
+@import "font-awesome-sprockets";
+@import "font-awesome";
+@import "bulma";
+@import "balances";
 
- h2 { padding-top: 0.6em; }
+header {
+  @extend .subtitle;
+  position: relative;  
+  padding-top: 0rem;  
 
- .fas { padding-right: 0.3em; }
+  &:first-child {    
+    margin-top: 1.6rem;  
+  }
+}
+
+a.new, a.update, a.remove {
+  @extend .button; 
+
+  &:before {
+    font-family: "Font Awesome 5 Free"; 
+    @extend .fas;         
+    padding-right: 0.5rem;
+  }
+}
+
+a.new {
+  @extend .is-success;
+
+  &:before {
+    @extend .fa-plus;
+  }
+}
+
+a.update {
+  @extend .is-info; 
+
+  &:before {    
+    @extend .fa-edit;
+  }
+}
+
+a.remove {  
+  @extend .is-danger; 
+
+  &:before {    
+    @extend .fa-trash;
+  }
+}
+
+.notification {
+  @extend .notification;
+  margin-top: 1.3rem;  
+}
+
+.notification-notice {
+   @extend .is-success;
+}
+
+.notification-alert {
+   @extend .is-danger;
+}

@@ -1,7 +1,10 @@
 <h1 class="title">Welcome to the Credit Card Balance Tracker</h1>
-<%= link_to icon("fas", "plus", "Add New Balance Information"), new_balance_path, class: "button is-primary" %>
+<%= link_to "Add New Balance Information", new_balance_path,
+    class: "new" %>
 
-<h2 class="subtitle">Card Balances</h2>
+<header>
+  <h2 class="subtitle">Card Balances</h2>  
+</header>
 
 <div id="balances">
   <% @balances.each do |balance| %>
