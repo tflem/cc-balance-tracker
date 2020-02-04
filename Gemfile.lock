@@ -198,6 +198,9 @@ GEM
       sprockets (> 3.0)
       sprockets-rails
       tilt
+    simple_form (5.0.1)
+      actionpack (>= 5.0)
+      activemodel (>= 5.0)
     simplecov (0.17.1)
       docile (~> 1.1)
       json (>= 1.8, < 3)
@@ -265,6 +268,7 @@ DEPENDENCIES
   rails (~> 6.0.2)
   rspec-rails (~> 3.9)
   sass-rails (>= 6)
+  simple_form (~> 5.0, >= 5.0.1)
   simplecov
   simplecov-console
   spring

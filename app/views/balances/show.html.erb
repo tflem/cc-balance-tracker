@@ -7,10 +7,10 @@
 <div class="box">
   <p><%= @balance.cc_balance %></p>
   <p><%= @balance.cc_due_date %></p>
-  <%= link_to "Edit CC Balance",
+  <%= link_to "Edit Balance",
       edit_balance_path(@balance),
       class: "update" %>
-  <%= link_to "Delete CC Balance",
+  <%= link_to "Delete Balance",
       balance_path(@balance),
       method: :delete,
       data: { confirm: "Are you sure you want to delete this CC Balance info?" },

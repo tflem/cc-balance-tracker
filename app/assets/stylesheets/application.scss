@@ -28,6 +28,10 @@ header {
   }
 }
 
+form {
+  max-width: 500px;
+}
+
 a.new, a.update, a.remove {
   @extend .button; 
 
