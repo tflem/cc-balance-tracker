@@ -79,4 +79,11 @@ a.remove {
    @extend .is-danger;
 }
 
-.fas { padding-right: 0.5rem; }
+.fas { 
+  padding-right: 0.5rem;
+}
+
+.fa-heart {
+  color: #DB360D;
+  padding-right: 0.3rem;
+}
