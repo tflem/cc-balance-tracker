@@ -1,14 +1,31 @@
-<h1 class="title">Welcome to the Credit Card Balance Tracker</h1>
-<%= link_to "Add New Balance Information", new_balance_path,
-    class: "new" %>
+<!-- h1 class="title">Welcome to the Credit Card Balance Tracker</h1-->
 
 <header>
-  <h2 class="subtitle">Card Balances</h2>  
+  <h2 class="title is-5">Card Balances</h2>  
 </header>
 
-<div id="balances">
-  <% @balances.each do |balance| %>
-    <h3><%= link_to balance.cc_name, balance %></h3>
-    <p><%= balance.cc_balance %></p>
-  <% end %>
+<div class="box">
+<div class="table_wrapper">
+  <table class ="table is-bordered is-fullwidth">
+    <thead>
+      <tr>
+        <th>Credit Card Name</th>
+        <th>Account Balance</th>
+        <th>Balance Due Date</th>          
+      </tr>
+    </thead>
+    <tbody>
+      <% @balances.each do |balance| %>
+        <tr>
+          <td><%= link_to balance.cc_name, balance %></td>
+          <td><%= "$" %><%= balance.cc_balance %></td>    
+          <td><%= balance.cc_due_date %></td>      
+        </tr>
+      <% end %>      
+    </tbody>
+  </table>
 </div>
+</div>
+
+<%= link_to "Add New Balance Information", new_balance_path,
+    class: "new" %>

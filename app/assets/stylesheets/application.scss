@@ -32,6 +32,11 @@ form {
   max-width: 500px;
 }
 
+.table_wrapper {
+  padding-bottom: 0.5rem;
+  overflow-x: auto;
+}
+
 a.new, a.update, a.remove {
   @extend .button; 
 
