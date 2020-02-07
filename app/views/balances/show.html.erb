@@ -1,10 +1,18 @@
 <% title(@balance.cc_name, "Balances") %>
 
-<h1><%= @balance.cc_name %></h1>
-<%= link_to "Edit Balance", edit_balance_path(@balance) %>
-<%= link_to "Delete Balance",
-    balance_path(@balance),
-    method: :delete,
-    data: { confirm: "Are you sure you want to delete this CC Balance info?" } %>
-<p><%= @balance.cc_balance %></p>
-<p><%= @balance.cc_due_date %></p>
+<header>
+  <h2><%= @balance.cc_name %></h2>
+</header>
+
+<div class="box">
+  <p><%= @balance.cc_balance %></p>
+  <p><%= @balance.cc_due_date %></p>
+  <%= link_to "Edit Balance",
+      edit_balance_path(@balance),
+      class: "update" %>
+  <%= link_to "Delete Balance",
+      balance_path(@balance),
+      method: :delete,
+      data: { confirm: "Are you sure you want to delete this CC Balance info?" },
+      class: "remove" %>
+</div>

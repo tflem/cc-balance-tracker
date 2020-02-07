@@ -1,0 +1,94 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+@import "font-awesome-sprockets";
+@import "font-awesome";
+@import "bulma";
+@import "balances";
+
+header {
+  @extend .subtitle;
+  position: relative;  
+  padding-top: 0rem;  
+
+  &:first-child {    
+    margin-top: 1.6rem;  
+  }
+}
+
+form {
+  max-width: 500px;
+}
+
+.table_wrapper {
+  padding-bottom: 0.5rem;
+  overflow-x: auto;
+}
+
+a.new, a.update, a.remove {
+  @extend .button; 
+
+  &:before {
+    font-family: "Font Awesome 5 Free"; 
+    @extend .fas;         
+    padding-right: 0.5rem;
+  }
+}
+
+a.new {
+  @extend .is-success;
+
+  &:before {
+    @extend .fa-plus;
+  }
+}
+
+a.update {
+  @extend .is-info; 
+
+  &:before {    
+    @extend .fa-edit;
+  }
+}
+
+a.remove {  
+  @extend .is-danger; 
+
+  &:before {    
+    @extend .fa-trash;
+  }
+}
+
+.notification {
+  @extend .notification;
+  margin-top: 1.3rem;  
+}
+
+.notification-notice {
+   @extend .is-success;
+}
+
+.notification-alert {
+   @extend .is-danger;
+}
+
+.fas { 
+  padding-right: 0.5rem;
+}
+
+.fa-heart {
+  color: #DB360D;
+  padding-right: 0.3rem;
+}
