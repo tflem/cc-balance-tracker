@@ -1,18 +1,3 @@
-/*
- * This is a manifest file that'll be compiled into application.css, which will include all the files
- * listed below.
- *
- * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
- * vendor/assets/stylesheets directory can be referenced here using a relative path.
- *
- * You're free to add application-wide styles to this file and they'll appear at the bottom of the
- * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
- * files in this directory. Styles in this file should be added after the last require_* statement.
- * It is generally better to create a new file per style scope.
- *
- *= require_tree .
- *= require_self
- */
 @import "font-awesome-sprockets";
 @import "font-awesome";
 @import "bulma";
@@ -20,11 +5,11 @@
 
 header {
   @extend .subtitle;
-  position: relative;  
-  padding-top: 0rem;  
+  position: relative;
+  padding-top: 0rem;
 
-  &:first-child {    
-    margin-top: 1.6rem;  
+  &:first-child {
+    margin-top: 1.6rem;
   }
 }
 
@@ -37,18 +22,20 @@ form {
   overflow-x: auto;
 }
 
-a.new, a.update, a.remove {
-  @extend .button; 
+a.new,
+a.update,
+a.remove {
+  @extend .button;
 
   &:before {
-    font-family: "Font Awesome 5 Free"; 
-    @extend .fas;         
+    font-family: "Font Awesome 5 Free";
+    @extend .fas;
     padding-right: 0.5rem;
   }
 }
 
 a.new {
-  @extend .is-success;
+  @extend .is-success;  
 
   &:before {
     @extend .fa-plus;
@@ -56,39 +43,39 @@ a.new {
 }
 
 a.update {
-  @extend .is-info; 
+  @extend .is-info;
 
-  &:before {    
+  &:before {
     @extend .fa-edit;
   }
 }
 
-a.remove {  
-  @extend .is-danger; 
+a.remove {
+  @extend .is-danger;
 
-  &:before {    
+  &:before {
     @extend .fa-trash;
   }
 }
 
 .notification {
   @extend .notification;
-  margin-top: 1.3rem;  
+  margin-top: 1.3rem;
 }
 
 .notification-notice {
-   @extend .is-success;
+  @extend .is-success;
 }
 
 .notification-alert {
-   @extend .is-danger;
+  @extend .is-danger;
 }
 
-.fas { 
+.fas {
   padding-right: 0.5rem;
 }
 
 .fa-heart {
-  color: #DB360D;
+  color: #db360d;
   padding-right: 0.3rem;
 }

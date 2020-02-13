@@ -5,7 +5,7 @@
 </header>
 
 <div class="box">
-  <p><%= @balance.cc_balance %></p>
+  <p><%= "$" %><%= @balance.cc_balance %></p>
   <p><%= @balance.cc_due_date %></p>
   <%= link_to "Edit Balance",
       edit_balance_path(@balance),
