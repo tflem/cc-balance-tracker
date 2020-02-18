@@ -71,6 +71,12 @@ a.remove {
   @extend .is-danger;
 }
 
+.navbar-item.footer-info {
+  flex-grow: 1;
+  flex-direction: column;
+  justify-content: center;
+}
+
 .fas {
   padding-right: 0.5rem;
 }
@@ -79,3 +85,5 @@ a.remove {
   color: #db360d;
   padding-right: 0.3rem;
 }
+
+

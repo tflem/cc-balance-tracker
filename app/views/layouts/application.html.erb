@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html class="has-navbar-fixed-bottom">
   <head>
     <title>
       <% if content_for?(:title) %>
@@ -44,14 +44,14 @@
         <% end %>
       <%= yield %>    
     </div>
-
-    <footer class="footer is-dark is-inverted">
-      <div class="content has-text-centered">
+    
+    <nav class="navbar is-fixed-bottom ">
+      <div class="navbar-item footer-info">
         <p>
           <strong>Developed</strong> with <%= icon("fas", "heart") %>by Tim Fleming | aka: The <strong>GREAT</strong> One | Credit Card Balance Tracker &copy; 2020      
         </p>
       </div>
-    </footer>    
+    </nav>    
   </body>
 </html>
 
