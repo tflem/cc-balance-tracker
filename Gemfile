@@ -5,7 +5,7 @@ ruby '2.6.5'
 
 gem 'rails', '~> 6.0.2'
 gem 'pg', '>= 0.18', '< 2.0'
-gem 'puma', '~> 4.1'
+gem 'puma', '~> 4.3', '>= 4.3.3'
 gem 'bulma-rails', '~> 0.8.0'
 gem 'font-awesome-sass', '~> 5.12.0'
 gem 'simple_form', '~> 5.0', '>= 5.0.1'
