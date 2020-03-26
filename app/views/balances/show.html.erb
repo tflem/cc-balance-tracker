@@ -16,3 +16,14 @@
       data: { confirm: "Are you sure you want to delete this CC Balance info?" },
       class: "remove" %>
 </div>
+
+<header>
+  <h2>Issues</h2>
+</header>
+
+<ul>
+  <li><%= link_to "New Issue",
+          new_balance_issue_path(@balance),
+          class: "new" %>        
+  </li>
+</ul>
