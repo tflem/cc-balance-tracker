@@ -20,8 +20,17 @@ RSpec.feature "Users can create new issues" do
 		click_button "Create Issue"
 
 		expect(page).to have_content "Issue has not been created."
-		expect(page).to have_content "Name can't be blank."
-		expect(page).to have_content "Description can't be blank."
+		expect(page).to have_content "Name can't be blank"
+		expect(page).to have_content "Description can't be blank"
+	end
+
+	scenario "with an invalid description" do
+		fill_in "Name", with: "Costco Membership Card"
+		fill_in "Description", with: "Renew it"
+		click_button "Create Issue"
+
+		expect(page).to have_content "Issue has not been created."
+		expect(page).to have_content "Description is too short"
 	end
 end
 
