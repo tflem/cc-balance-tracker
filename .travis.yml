@@ -46,6 +46,6 @@ deploy:
   app: cc-balance-tracker
   on:
     repo: tflem/cc-balance-tracker
-    branch: creating-issues
+    branch: viewing-issues
   run:
     - rake db:migrate
