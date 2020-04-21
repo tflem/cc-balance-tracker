@@ -7,8 +7,8 @@ RSpec.feature "Users can view issues" do
                       name: "Costco Visa",
                       description: "Serves as an official membership card.")
     
-    wb_balance = FactoryBot.create(:balance, cc_name: "Capitol One")
-    FactoryBot.create(:issue, balance: cb_balance,
+    wb_balance = FactoryBot.create(:balance, cc_name: "Walmart")
+    FactoryBot.create(:issue, balance: wb_balance,
                       name: "Walmart Visa",
                       description: "Serves as an official store card.")
 
@@ -18,14 +18,14 @@ RSpec.feature "Users can view issues" do
   scenario "for a given balance" do
     click_link "Capitol One"
 
-    expect(page).to have_content "Serves as an official membership card."
-    expect(page).to_not have_content "Serves as an official store card."
+    expect(page).to have_content "Costco Visa"
+    expect(page).to_not have_content "Walmart Visa"
 
-    click_link "Serves as an official membership card."
-    within("issue h2") do
-      expect(page).to have_content "Serves an official membership card."
+    click_link "Costco Visa"
+    within(".container h2") do
+      expect(page).to have_content "Costco Visa"
     end
 
-    expect(page).to have_content "The premier card for gas-filling enthusiasts!"
+    expect(page).to have_content "Serves as an official membership card."
   end    
 end

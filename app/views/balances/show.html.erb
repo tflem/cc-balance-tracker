@@ -27,3 +27,12 @@
           class: "new" %>        
   </li>
 </ul>
+
+<ul id="issues">
+  <% @balance.issues.each do |issue| %>
+    <li>
+      #<%= issue.id %> -
+      <%= link_to issue.name, [@balance, issue] %>
+    </li>
+  <% end %>
+</ul>
