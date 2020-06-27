@@ -14,9 +14,6 @@ services:
   - postgresql
 addons:
   postgresql: "9.6"
-env:
-  global:
-    CC_TEST_REPORTER_ID=d618104d52b1e67d6c40990a5a91b80925564292dbb88db19fb99171d24d666e
 notifications:
   - false
 before_install:
