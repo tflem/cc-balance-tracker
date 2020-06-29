@@ -7,5 +7,9 @@
     <h2><%= @issue.name %></h2>
   </header>
 
+  <header>
+  	<%= link_to "Edit Issue", [:edit, @balance, @issue], class: "edit" %>      	
+  </header>
+
   <%= simple_format(@issue.description) %>
 </div>
