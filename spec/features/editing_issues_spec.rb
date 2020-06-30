@@ -15,7 +15,7 @@ RSpec.feature "Users can edit existing issues" do
 
 		expect(page).to have_content "Issue has been updated."
 
-		within("#issue h2") do
+		within(".container h2") do
 			expect(page).to have_content "Gas Card"
 			expect(page).not_to have_content issue.name
 		end
