@@ -21,6 +21,19 @@ class IssuesController < ApplicationController
 	def show
 	end
 
+	def edit
+	end
+
+	def update
+		if @issue.update(issue_params)
+			flash[:notice] = "Issue has been updated."
+			redirect_to [@balance, @issue]
+		else
+			flash.now[:alert] = "Issue has not been updated."
+			render "edit"
+		end
+	end
+
 	private
 
 	def set_balance
