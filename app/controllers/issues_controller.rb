@@ -34,6 +34,13 @@ class IssuesController < ApplicationController
 		end
 	end
 
+	def destroy
+		@issue.destroy
+		flash[:notice] = "Issue has been deleted."
+
+		redirect_to @balance
+	end
+
 	private
 
 	def set_balance
