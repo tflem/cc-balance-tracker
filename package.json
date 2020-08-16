@@ -10,6 +10,7 @@
     "elliptic": "^6.5.3",
     "lodash": "^4.17.19",
     "minimist": "1.2.3",
+    "serialize-javascript": "^4.0.0",
     "turbolinks": "^5.2.0",
     "websocket-extensions": "^0.1.4"
   },
