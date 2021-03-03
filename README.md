@@ -4,11 +4,11 @@
 
 # Credit Card Balance Tracker
 
-> This a credit card tracking application, which features the following tools:
+> This a credit card tracking application, developed with the following tools:
 
 * Ruby 2.6.5
-* Continuous Integration/Deployment: Travis CI
-* Ruby on Rails 6.0.2.3
+* Continuous Integration/Deployment: Travis CI/Heroku
+* Ruby on Rails 6.0.3.5
 * HTML5 and Sass
 * PostgreSQL 11
 * Testing Framework: RSpec 3.9
