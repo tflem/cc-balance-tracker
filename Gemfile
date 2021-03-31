@@ -20,7 +20,7 @@ gem 'bootsnap', '>= 1.4.2', require: false
 group :development, :test do  
   gem 'pry-byebug', '~> 3.7'
   gem 'pry-rails', '~> 0.3.9'
-  gem 'rspec-rails', '~> 3.9'
+  gem 'rspec-rails', '~> 4.0', '>= 4.0.2'
 end
 
 group :development do
