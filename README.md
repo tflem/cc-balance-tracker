@@ -8,7 +8,7 @@
 
 * Ruby 2.6.5
 * Continuous Integration/Deployment: Travis CI/Heroku
-* Ruby on Rails 6.1.3.1
+* Ruby on Rails 6.1.3.2
 * HTML5 and Sass
 * PostgreSQL
 * Testing Framework: RSpec 4.0.2
