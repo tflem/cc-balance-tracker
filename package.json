@@ -7,6 +7,7 @@
     "@rails/ujs": "^6.0.3-3",
     "@rails/webpacker": "5.2.1",
     "acorn": "^8.0.1",
+    "browserslist": "^4.16.6",
     "elliptic": "^6.5.4",
     "hosted-git-info": "^4.0.2",
     "http-proxy": "^1.18.1",
