@@ -20,7 +20,7 @@
     "postcss": "^8.2.10",
     "serialize-javascript": "^5.0.1",
     "ssri": "^8.0.1",
-    "trim-newlines": "^1.0.0",
+    "trim-newlines": "^3.0.1",
     "turbolinks": "^5.2.0",
     "url-parse": "^1.5.1",
     "websocket-extensions": "^0.1.4",
